@@ -84,7 +84,7 @@ class CRM_Utils_NumberTest extends CiviUnitTestCase {
    * @dataProvider stringToNumberCases
    */
   public function testConvertToNumber($stringNumber, $expectedValue) {
-    $this->assertEquals($expectedValue, CRM_Utils_Number::formatUnitSize($stringNumber));
+    $this->assertEquals($expectedValue, CRM_Utils_Number::convertToNumber($stringNumber));
   }
 
   public function sizeCases() {

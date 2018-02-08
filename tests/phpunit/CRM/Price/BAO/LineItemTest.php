@@ -131,7 +131,6 @@ class CRM_Price_BAO_LintItemTest extends CiviUnitTestCase {
   /**
    * @param $stringNumber
    * @param $expectedValue
-   * @dataProvider stringToNumberCases
    */
   public function testLintotalFormatWithThoundsonSeparater() {
     $values = array();
