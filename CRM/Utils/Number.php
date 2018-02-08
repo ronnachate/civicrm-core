@@ -77,6 +77,20 @@ class CRM_Utils_Number {
     }
   }
 
+   /**
+   * Given a number or string, removing thousands separator with comma and space to make php seen as number
+   *
+   * @param string $textNumber
+   *   (int $significantDigits, int $postDecimalDigits).
+   * @return float
+   * @link https://dev.mysql.com/doc/refman/5.1/en/fixed-point-types.html
+   */
+  public static function convertToNumber($textNumber) {
+    $textNumber = str_replace(array(' ',','), '', $textNumber);
+    $textNumber = abs($textNumber);
+    return $textNumber;
+  }
+
   /**
    * Some kind of numbery-looky-printy thing.
    *

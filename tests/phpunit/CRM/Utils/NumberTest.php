@@ -67,6 +67,26 @@ class CRM_Utils_NumberTest extends CiviUnitTestCase {
     );
   }
 
+  /**
+   * @return array
+   */
+  public function stringToNumberCases() {
+    $cases = [];
+    $cases[] = ['1,200.00', 1200];
+    $cases[] = ['1,200', 1200];
+    $cases[] = ['1 001,001', 1001001];
+    return $cases;
+  }
+
+  /**
+   * @param $stringNumber
+   * @param $expectedValue
+   * @dataProvider stringToNumberCases
+   */
+  public function testConvertToNumber($stringNumber, $expectedValue) {
+    $this->assertEquals($expectedValue, CRM_Utils_Number::formatUnitSize($stringNumber));
+  }
+
   public function sizeCases() {
     $cases = [];
     $cases[] = ['20M', '20971520'];
